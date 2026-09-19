@@ -1,0 +1,299 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================
+   START / RESET BUTTON
+   ========================= */
+
+.button {
+    transform: translateX(505px) translateY(495px);
+
+    padding: 15px 45px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: white;
+    background-color: #35b9f2;
+
+    border: 8px solid #67205b;
+    border-radius: 20px;
+
+    box-shadow:
+        inset 0 4px 8px rgba(255, 255, 255, 0.35),
+        inset 0 -6px 10px rgba(0, 100, 180, 0.2),
+        0 5px 0 #4b1645;
+
+    transition: transform 1s;
+}
+
+.button:hover {
+    background-color: rgb(193, 19, 19);
+    transition: 1s;
+}
+
+
+/* Winner button */
+
+.button.winner {
+    background-color: #f5c542;
+}
+
+
+/* New RESET button */
+
+.new-reset {
+    transform: translateX(700px) translateY(100px);
+}
+
+
+/* =========================
+   BOARD
+   ========================= */
+
+.board {
+    position: fixed;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+
+    transform: translateX(450px) translateY(100vh);
+
+    transition: transform 1s;
+}
+
+
+/* =========================
+   BOXES
+   ========================= */
+
+.box {
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    font-size: 65px;
+    font-family: "Arial Rounded MT Bold",
+                 "Trebuchet MS",
+                 Arial,
+                 sans-serif;
+
+    font-weight: bold;
+
+    color: #39d21f;
+
+    /* Makes X/O look slightly 3D */
+    text-shadow:
+        3px 3px 0 #269414,
+        5px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   RED GRID
+   ========================= */
+
+/* Vertical line 1 */
+
+.box:nth-child(2),
+.box:nth-child(5),
+.box:nth-child(8) {
+    border-left: 16px solid #e60019;
+    border-right: 16px solid #e60019;
+
+    border-radius: 14px;
+}
+
+
+/* Horizontal line 1 */
+
+.box:nth-child(4),
+.box:nth-child(5),
+.box:nth-child(6) {
+    border-top: 16px solid #e60019;
+    border-bottom: 16px solid #e60019;
+
+    border-radius: 14px;
+}
+/* =========================
+   WINNING LINE
+   ========================= */
+
+.win-line {
+    position: absolute;
+
+    width: 0;
+    height: 7px;
+
+    background-color: #9d1717;
+
+    border-radius: 10px;
+
+    box-shadow:
+        2px 2px 3px rgba(0, 0, 0, 0.3);
+
+    animation: drawLine 1s linear forwards;
+}
+
+
+/* First row */
+
+.row-1 {
+    left: 0;
+    top: 50px;
+}
+
+
+/* Second row */
+
+.row-2 {
+    left: 0;
+    top: 150px;
+}
+
+
+/* Third row */
+
+.row-3 {
+    left: 0;
+    top: 250px;
+}
+
+
+/* First column */
+
+.column-1 {
+    left: 50px;
+    top: 0;
+
+    height: 0;
+    width: 7px;
+
+    animation: drawColumn 1s linear forwards;
+}
+
+
+/* Second column */
+
+.column-2 {
+    left: 150px;
+    top: 0;
+
+    height: 0;
+    width: 7px;
+
+    animation: drawColumn 1s linear forwards;
+}
+
+
+/* Third column */
+
+.column-3 {
+    left: 250px;
+    top: 0;
+
+    height: 0;
+    width: 7px;
+
+    animation: drawColumn 1s linear forwards;
+}
+
+
+/* Diagonal top-left → bottom-right */
+
+.diagonal-1 {
+    left: 0;
+    top: 0;
+
+    width: 0;
+
+    transform: rotate(45deg);
+
+    transform-origin: left center;
+
+    animation: drawDiagonal 1s linear forwards;
+}
+
+
+/* Diagonal top-right → bottom-left */
+
+.diagonal-2 {
+    left: 300px;
+    top: 0;
+
+    width: 0;
+
+    transform: rotate(135deg);
+
+    transform-origin: left center;
+
+    animation: drawDiagonal 1s linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+/* Horizontal */
+
+@keyframes drawLine {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 300px;
+    }
+}
+
+
+/* Vertical */
+
+@keyframes drawColumn {
+
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 300px;
+    }
+}
+
+
+/* Diagonal */
+
+@keyframes drawDiagonal {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 424px;
+    }
+}
