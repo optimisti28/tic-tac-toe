@@ -1,2 +1,9 @@
-# tic-tac-toe
-A simple Tic Tac Toe game made with HTML, CSS and JavaScript.
+# Tic Tac Toe
+
+A simple Tic Tac Toe game made using:
+- HTML
+- CSS
+- JavaScript
+
+## How to Play
+Click START and play X and O.
