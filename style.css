@@ -102,11 +102,11 @@ body {
 
     font-weight: bold;
 
-    color: #39d21f;
+    color: #ab5cac;
 
     /* Makes X/O look slightly 3D */
     text-shadow:
-        3px 3px 0 #269414,
+        3px 3px 0 #ab5ca4,
         5px 5px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -120,8 +120,8 @@ body {
 .box:nth-child(2),
 .box:nth-child(5),
 .box:nth-child(8) {
-    border-left: 16px solid #e60019;
-    border-right: 16px solid #e60019;
+    border-left: 16px solid #427091;
+    border-right: 16px solid #427091;
 
     border-radius: 14px;
 }
@@ -132,8 +132,8 @@ body {
 .box:nth-child(4),
 .box:nth-child(5),
 .box:nth-child(6) {
-    border-top: 16px solid #e60019;
-    border-bottom: 16px solid #e60019;
+    border-top: 16px solid #427091;
+    border-bottom: 16px solid #427091;
 
     border-radius: 14px;
 }
@@ -147,7 +147,7 @@ body {
     width: 0;
     height: 7px;
 
-    background-color: #9d1717;
+    background-color: #a43d63;
 
     border-radius: 10px;
 
