@@ -37,10 +37,14 @@ startButton.addEventListener("click", function() {
 
         boxes.forEach(function(box) {
             box.textContent = "";
+            box.classList.remove("x");
+            box.classList.remove("o");
         });
 
-        boardState = ["", "", "", "", "", "", "", "", ""];
+        boardState = ["", "", "", "", "", "", "", ""];
+
         currentPlayer = "X";
+
         gameOver = false;
 
         let winLine = document.querySelector(".win-line");
@@ -56,6 +60,7 @@ startButton.addEventListener("click", function() {
     /* Start the game */
 
     startButton.style.transform = "translateX(505px) translateY(100px)";
+
     board.style.transform = "translateX(450px) translateY(150px)";
 
     startButton.textContent = "RESET";
@@ -87,6 +92,7 @@ function checkWinner() {
             startButton.textContent = "WINNER";
 
             startButton.classList.add("winner");
+
             startButton.disabled = true;
 
             /* Create winning line */
@@ -157,6 +163,7 @@ function createResetButton() {
     resetButton.textContent = "RESET";
 
     resetButton.classList.add("button");
+
     resetButton.classList.add("new-reset");
 
     document.body.appendChild(resetButton);
@@ -166,10 +173,14 @@ function createResetButton() {
 
         boxes.forEach(function(box) {
             box.textContent = "";
+            box.classList.remove("x");
+            box.classList.remove("o");
         });
 
-        boardState = ["", "", "", "", "", "", "", "", ""];
+        boardState = ["", "", "", "", "", "", "", ""];
+
         currentPlayer = "X";
+
         gameOver = false;
 
         let winLine = document.querySelector(".win-line");
@@ -179,7 +190,11 @@ function createResetButton() {
         }
 
         startButton.textContent = "RESET";
+
         startButton.classList.remove("winner");
+
+        startButton.disabled = false;
+
         resetButton.remove();
     });
 }
@@ -198,6 +213,8 @@ function handleClick(box, index) {
     }
 
     box.textContent = currentPlayer;
+
+    box.classList.add(currentPlayer.toLowerCase());
 
     boardState[index] = currentPlayer;
 
