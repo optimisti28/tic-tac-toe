@@ -42,6 +42,7 @@ body {
     transition: transform 1s;
 }
 
+
 .button:hover {
     background-color: rgb(193, 19, 19);
     transition: 1s;
@@ -95,27 +96,42 @@ body {
     box-sizing: border-box;
 
     font-size: 65px;
-    font-family: "Arial Rounded MT Bold",
-                 "Trebuchet MS",
-                 Arial,
-                 sans-serif;
+
+    font-family:
+        "Arial Rounded MT Bold",
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
 
     font-weight: bold;
 
-    color: #ab5cac;
-
-    /* Makes X/O look slightly 3D */
     text-shadow:
-        3px 3px 0 #ab5ca4,
+        3px 3px 0 rgba(0, 0, 0, 0.15),
         5px 5px 4px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+
+/* X color */
+
+.box.x {
+    color: #ab5cac;
+}
+
+
+/* O color */
+
+.box.o {
+    color: #f5c542;
 }
 
 
 /* =========================
-   RED GRID
+   GRID
    ========================= */
 
-/* Vertical line 1 */
+/* Vertical lines */
 
 .box:nth-child(2),
 .box:nth-child(5),
@@ -127,7 +143,7 @@ body {
 }
 
 
-/* Horizontal line 1 */
+/* Horizontal lines */
 
 .box:nth-child(4),
 .box:nth-child(5),
@@ -137,6 +153,8 @@ body {
 
     border-radius: 14px;
 }
+
+
 /* =========================
    WINNING LINE
    ========================= */
